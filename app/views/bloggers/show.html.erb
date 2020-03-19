@@ -1,0 +1,20 @@
+<h1><%= @blogger.name %></h1>
+<hr>
+<br>
+<h3>Age: <%= @blogger.age %></h3>
+<h2>Bio<h2>
+<%= @blogger.bio %><br>
+
+<h2>Posts</h2>
+<%= @blogger.posts.each do |post| %>
+  <ul>
+    <li><%= link_to "#{post.title} #{post.likes} <3", post_path(post) %></li>
+  </ul>
+<% end %>
+<br></br>
+<%= link_to 'Edit Profile', blogger_path(@blogger) %>
+<br></br>
+<%= form_tag blogger_path(@blogger.id), method: :delete do %>
+  <%= submit_tag "Delete #{@blogger.name} profile" %>
+<% end %>
+

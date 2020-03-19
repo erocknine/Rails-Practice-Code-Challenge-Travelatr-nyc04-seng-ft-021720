@@ -1,0 +1,7 @@
+<h1><%= "#{@destination.name}, #{@destination.country}" %></h1>
+<h2>Posts: </h2>
+<% @posts.sort{|post| post.created_by}.each do |post| %>
+  <ul>
+    <li><%= post.name %></li>
+  </ul>
+  <% end %>

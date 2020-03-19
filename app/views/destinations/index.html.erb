@@ -1,0 +1,5 @@
+<h1>Destinations</h1>
+<hr>
+<% @destinations.each do |place| %>
+  <%= link_to place.name, destination_path(place) %>
+<% end %>
